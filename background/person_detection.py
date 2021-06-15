@@ -86,8 +86,8 @@ class PersonDetection():
                 out, size= self.image.shape[:2], mode="bicubic", align_corners=False
             )
             prediction = torch.argmax(prediction, dim=1) + 1
+            prediction = torch.clamp(torch.where(prediction == 13, prediction, 0), 0, 1) # 13 is person index in ADE15k dataset.
             prediction = prediction.squeeze().cpu().numpy()
-            prediction = np.where(prediction  == 13, 13, 0) # 13 is person index in ADE15k dataset.
 
         return prediction
 

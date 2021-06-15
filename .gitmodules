@@ -1,3 +1,6 @@
 [submodule "DPT"]
 	path = DPT
 	url = git@github.com:intel-isl/DPT.git
+[submodule "MODNet"]
+	path = MODNet
+	url = git@github.com:ZHKKKe/MODNet.git
