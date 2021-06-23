@@ -11,7 +11,7 @@ class ImageCut():
 
     # Cut background and return on foreground objects. 
     def cut(self):
-        if self.background:
+        if self.background is not None:
             out_img = self.background
         else: 
             out_img = np.ones(self.image.shape,dtype=self.image.dtype)*255
@@ -31,7 +31,7 @@ class AlphaMatting():
 
     # Cut background and return on foreground objects. 
     def cut(self):
-        if self.background:
+        if self.background is not None:
             out_img = self.background
         else:
             out_img = np.ones(self.image.shape,dtype=self.image.dtype)*255
